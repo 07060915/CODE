@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>examples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var codeBlocks = document.getElementsByTagName('code');
+        for (var i = 0; i < codeBlocks.length; i++) {
+            codeBlocks[i].classList.add('copyable');
+        }
+
+        var clipboard = new ClipboardJS('.copyable', {
+            target: function (trigger) {
+                return trigger;
+            }
+        });
+
+        clipboard.on('success', function (e) {
+            alert('代码已复制到剪贴板！');
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function (e) {
+            alert('复制失败，请手动复制代码。');
+        });
+    });
+</script>
+</head>
+<body>
+    <h1>1</h1>
+    <p>这里是一些代码和说明。</p>
+
+    <pre><code>
+        // daaada
+    </code></pre>
+</body>
+</html>
