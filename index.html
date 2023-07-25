@@ -17,7 +17,7 @@
         });
 
         clipboard.on('success', function (e) {
-            alert('代码已复制到剪贴板！');
+            alert('Code copied to clipboard!');
             e.clearSelection();
         });
 
@@ -29,10 +29,37 @@
 </head>
 <body>
     <h1>1</h1>
-    <p>这里是一些代码和说明。</p>
+    <p>histogram
+        Using the mpg data set in the ggplot package, we'll examine the distribution of city miles per gallon (cty) for 117 
+        automobile configurations in 2008. Four variations of a histogram are created
+    </p>
 
     <pre><code>
-        // daaada
+        // library(ggplot2) 
+        library(scales)
+        data(mpg) 
+        cars2008 <- mpg[mpg$year == 2008, ]
+        ggplot(cars2008, aes(x=hwy)) + #1 
+        geom_histogram() + #1 
+        labs(title="Default histogram") #1 
+       ggplot(cars2008, aes(x=hwy)) + #2 
+        geom_histogram(bins=20, color="white", fill="steelblue") + #2 
+        labs(title="Colored histogram with 20 bins", #2 
+        x="City Miles Per Gallon", #2 
+        y="Frequency") 
+       ggplot(cars2008, aes(x=hwy, y=..density..)) + #3 
+        geom_histogram(bins=20, color="white", fill="steelblue") + #3 
+        scale_y_continuous(labels=scales::percent) + #3 
+        labs(title="Histogram with percentages", #3 
+        y= "Percent". #3 
+        x="City Miles Per Gallon") #3 
+       ggplot(cars2008, aes(x=hwy, y=..density..)) + #4 
+        geom_histogram(bins=20, color="white", fill="steelblue") + #4 
+        scale_y_continuous(labels=scales::percent) + 44 
+        geom_density(color="red", size=1) + #4 
+        labs(title="Histogram with density curve", #4 
+        y="Percent" , #4 
+        x="City Miles Per Gallon") #4
     </code></pre>
 </body>
 </html>
