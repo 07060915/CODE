@@ -61,5 +61,21 @@
         y="Percent" , #4 
         x="City Miles Per Gallon") #4
     </code></pre>
+    <p>
+        The first histogram #1 demonstrates the default plot when no options are specified. In this 
+case, 30 bins are created. For the second histogram #2, 20 bins, a steel blue fill, and a white 
+border color are specified. In addition, more informative labels have been added. The number 
+of bins can strongly influence the appearance of the histogram. It is a good idea to experiment 
+with the bins value until you find one that captures the distribution well.
+    </p>
+    <p>
+        The third histogram #3 plots the data as percents rather than frequencies. This is 
+accomplished by assigning the built-in variable ..density.. to the y axis. The scales
+package is used to format the y-axis as percents. Be sure to install the package 
+(install.packages("scales")) before running this part of the code. 
+     The fourth histogram #4 is similar to the previous plot, but adds a density curve. The 
+density curve is a kernel density estimate.It provides a smoother description of the distribution of 
+scores. The geom_density() function is used to plotthe kernel curve in a red color and a width that's slightly larger the default thickness for lines.
+    </p>
 </body>
 </html>
